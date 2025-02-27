@@ -28,7 +28,7 @@
         h1 {
             color: #1DB954;
         }
-        select, button {
+        select, button, input {
             padding: 12px;
             margin: 10px;
             font-size: 16px;
@@ -38,6 +38,11 @@
         select {
             background: #222;
             color: white;
+        }
+        input {
+            background: #222;
+            color: white;
+            width: 200px;
         }
         button {
             background: #1DB954;
@@ -125,6 +130,8 @@
             
             <div class="custom-playlist">
                 <h3>Custom Playlist:</h3>
+                <input type="text" id="playlist-name" placeholder="Enter Playlist Name">
+                <button onclick="savePlaylistName()">Save Name</button>
                 <ul id="playlist">
                     <!-- Custom playlist will appear here -->
                 </ul>
@@ -141,6 +148,9 @@
         const API_KEY = "e9dedfddb6msh0a3449e867fdd5dp1cc4a1jsn137c768d2de9"; // Deezer API Key
         const API_URL = 'https://deezerdevs-deezer.p.rapidapi.com/infos';
         const SONG_SEARCH_URL = 'https://deezerdevs-deezer.p.rapidapi.com/search';
+
+        let customPlaylist = [];
+        let playlistName = "My Playlist"; // Default playlist name
 
         // Fetch songs based on mood using Deezer's search API
         async function fetchSongs(mood) {
@@ -187,7 +197,6 @@
         }
 
         // Add song to custom playlist
-        let customPlaylist = [];
         function addToCustomPlaylist(title, previewUrl, coverUrl) {
             const song = { title, previewUrl, coverUrl };
             customPlaylist.push(song);
@@ -205,6 +214,13 @@
                     <button class="play-btn" onclick="playSong('${song.previewUrl}')">Play</button>
                 </li>
             `).join('');
+        }
+
+        // Save the playlist name
+        function savePlaylistName() {
+            const nameInput = document.getElementById('playlist-name');
+            playlistName = nameInput.value || "My Playlist";
+            document.querySelector('.custom-playlist h3').innerText = `Custom Playlist: ${playlistName}`;
         }
 
         // Generate mood-based playlist
