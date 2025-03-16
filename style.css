@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #1DB954, #191414);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    color: #1DB954;
+}
+
+select, button, input {
+    padding: 12px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+select {
+    background: #222;
+    color: white;
+}
+
+input {
+    background: #222;
+    color: white;
+    width: 200px;
+}
+
+button {
+    background: #1DB954;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #14833b;
+}
+
+.playlist, .song-list {
+    width: 100%;
+    padding: 15px;
+    background: #222;
+    border-radius: 10px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.song-list {
+    height: 300px;
+    overflow-y: scroll;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.song-info {
+    display: flex;
+    align-items: center;
+}
+
+.song-info img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.play-btn {
+    background: #1DB954;
+    padding: 8px 12px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.play-btn:hover {
+    background: #14833b;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.custom-playlist {
+    margin-top: 20px;
+    padding: 15px;
+    background: #333;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.custom-playlist h3 {
+    margin: 0;
+}
+
+.custom-playlist ul {
+    padding-left: 20px;
+}
+
+.custom-playlist li {
+    padding: 5px;
+    border-bottom: 1px solid #444;
+}
+
+.lyrics-container {
+    width: 80%;
+    margin-top: 20px;
+    padding: 15px;
+    background: #222;
+    border-radius: 10px;
+}
+
+.lyrics-box {
+    width: 95%;
+    height: 150px;
+    overflow-y: auto;
+    border: 1px solid #444;
+    padding: 10px;
+    background: #333;
+    color: white;
+    border-radius: 5px;
+}
+
+/* About Section with Animation */
+.about {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    background: #222;
+    border-radius: 10px;
+    text-align: left;
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Subscription Form with Animation */
+.subscription {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    background: #222;
+    border-radius: 10px;
+    text-align: left;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.subscription input {
+    width: 70%;
+    padding: 10px;
+    margin-right: 10px;
+    background: #333;
+    color: white;
+    border: 1px solid #444;
+}
+
+.subscription button {
+    padding: 10px 15px;
+    cursor: pointer;
+    background: #1DB954;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.subscription button:hover {
+    background: #14833b;
+}
+.stop-btn {
+    background: #ff4d4d;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.stop-btn:hover {
+    background: #cc0000;
+}
+/* Additional Sections Container */
+.additional-sections {
+    width: 100%;
+    max-width: 800px; /* Adjusted to match the desired width */
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between About and Subscription sections */
+}
+
+/* About Section */
+.about {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+    animation: slideIn 1s ease-in-out;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    max-width: 600px; /* Decreased width */
+    margin: 0 auto; /* Center the section */
+}
+
+.about h2 {
+    color: #1DB954;
+    margin-bottom: 10px;
+}
+
+.about p {
+    color: #ddd;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Subscription Section */
+.subscription {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+    animation: fadeIn 1.5s ease-in-out;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    max-width: 600px; /* Decreased width */
+    margin: 0 auto; /* Center the section */
+}
+
+.subscription h2 {
+    color: #1DB954;
+    margin-bottom: 10px;
+}
+
+.subscription p {
+    color: #ddd;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.subscription input {
+    width: calc(100% - 120px);
+    padding: 10px;
+    margin-right: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+.subscription button {
+    padding: 10px 15px;
+    background: #1DB954;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.subscription button:hover {
+    background: #14833b;
+}
+
